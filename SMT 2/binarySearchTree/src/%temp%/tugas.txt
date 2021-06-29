@@ -1,0 +1,26 @@
+Buatlah method cetak pada Binary Search Tree untuk cetak secara preOrder, inOrder,
+postOrder
+
+void findDirectory(int input){
+        if (isEmpty()){
+            System.out.println("Tree masih kosong");
+        }else {
+            if (this.checking(input) == true){
+                Node temp = root;
+                while (temp != null){
+                    if (input > temp.data){
+                        System.out.print(temp.data + " ,");
+                        temp = temp.right;
+                    }else if (input < temp.data){
+                        System.out.print(temp.data +", ");
+                        temp = temp.left;
+                    }else if (input == temp.data){
+                        System.out.println(input);
+                        break;
+                    }
+                }
+            }else {
+                System.out.println("Data tidak ada dalam tree");
+            }
+        }
+    }

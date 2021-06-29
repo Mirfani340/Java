@@ -1,0 +1,33 @@
+       // contoh memanggil isEmptry
+//        if (bst.isEmpty()){
+//            System.out.println("Data masih kosong");
+//        }else {
+//            System.out.println("Found data");
+//        }
+//        // contoh menggunakan insert
+//        //data yang penting paling pertama adalah yang tengah2
+//        for (int i = 0; i < 5; i++) {
+//            System.out.print("Input >\t");
+//            int usrInput = scan.nextInt();
+//            bst.insert(new com.praktikum.Node(usrInput));
+//        }
+//        // find directory
+//        System.out.println("Search data ? >\t");
+//        int searchInput = scan.nextInt();
+//        bst.findDirectory(searchInput);
+//
+//        //remove
+//        // remove is bug !!
+////        System.out.print("remove data ? >\t");
+////        int removeInput = scan.nextInt();
+////        bst.remove(removeInput);
+//        System.out.println(bst.findMin().data);
+//        System.out.println(bst.findMax().data);
+//
+//        //apakah data ada ?
+//        System.out.print("find ? >\t");
+//        int findInput = scan.nextInt();
+//        bst.find(findInput);
+//
+//        // contoh hasil getLeafCount
+//        System.out.println("jumlah leaf >"+bst.getLeafCount());

@@ -1,0 +1,56 @@
+package com.praktikum;
+
+public class remove {
+    void remove(int input){
+        if (this.remove(input, root) == null){
+            System.out.println("Data"+input+"tidak ada dalam tree");
+        }else {
+            root = remove(input, root);
+        }
+    }
+    private Node remove (int input, Node root){
+        Node parent = null;
+        Node temp = root;
+        while (temp != null && temp.data != input)
+        {
+            parent = temp;
+            if (input < temp.data){
+                temp = temp.left;
+            }else {
+                temp = temp.right;
+            }
+        }
+        if (temp == null){
+            return root;
+        }
+        if (temp.left == null && temp.right == null){
+            if (temp != root)
+            {
+                if (parent.left == temp) {
+                    parent.left = null;
+                }else {
+                    parent.right = null;
+                }
+            }else {
+                root = null;
+            }
+        }else if (temp.left != null && temp.right != null){
+            Node successor = findMin();
+            int val = successor.data;
+            remove(successor.data, root);
+            temp.data = val;
+        }else {
+            Node child = (temp.left != null)? temp.left: temp.right;
+            if (temp != root){
+                if (temp == parent.left){
+                    parent.left = child;
+                }else {
+                    parent.right = child;
+                }
+            }else {
+                root = child;
+            }
+        }
+        return root;
+    }
+}
