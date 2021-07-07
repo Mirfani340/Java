@@ -1,0 +1,106 @@
+bubbleSort = membandingkan dengan proses berulang
+selectionSort = mencari nilai minimum baru dibandingan
+inserttionSort = dibandingkan dengan nilai di indeks sebelumnya
+
+soal = addFirs > algorithma > printNode
+
+package com.sorting;
+
+import java.util.Scanner;
+
+public class dataSorting {
+    static int temp,pos,i,j;
+    // bubble Sort
+    public static int[] bubbleSort(int data[]){
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j >= data.length-1; j-- ) {
+                if (data[j] < data[j-1]){
+                    temp = data[j];
+                    data[j] = data[j-1];
+                    data[j-1] = temp;
+                }
+            }
+        }
+        return data;
+    }
+
+    public static int[] selectionSort(int data[]){
+        //1 cari nilai minimum
+        // perulangan
+        for (int i = 0; i < data.length-1; i++) {
+            pos = i;
+            // looping mencari nilai minimum
+            for (j = 1 + j; j <data.length; j++){
+                // seleksi data
+                if (data[j] < data[pos]){
+                    pos = j;
+                }
+                // membandingkan data
+                if (pos != i){
+                    // terjadi pertukaran data
+                    temp = data[pos];
+                    data[pos] = data[i];
+                    data[i] = temp;
+                }
+            }
+            System.out.print(i);
+        }
+        return data;
+    }
+    public static int[] insertionSort(int data[]){
+//        looping data
+        for (int i = 1; i < data.length; i++) {
+            temp = data[i];
+            j = i;
+//            membandingkan data dengan data sebelumnya
+            while ((j > 0) && (data[j-1] > temp)){
+//                jika kondisi terpenuhi maka terjadi penyisihan data
+                data[j] = data[j-1];
+                j--;
+            }
+            data[j] = temp;
+            System.out.println(j);
+        }
+        return data;
+    }
+
+    static void printArray(int array[]){
+        for (int k = 0; k < array.length; k++) {
+            System.out.println(array);
+        }
+    }
+
+    static void menu(){
+        System.out.println("1. Bubble Sort");
+        System.out.println("2. selection Sort");
+        System.out.println("3. Insertion Sort");
+        System.out.println("> ");
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        boolean repeat = true;
+        do {
+            menu();
+            int usrOption = scan.nextInt();
+            switch (usrOption){
+                case 1 :
+                    System.out.print("How many data ? : ");
+                    int manyData = scan.nextInt();
+                    int array[] = new int[manyData];
+                    for (int k = 0; k < manyData; k++) {
+                        System.out.print("> ");
+                        array[k] = scan.nextInt();
+                    }
+                    dataSorting.bubbleSort(array);
+                    break;
+                case 2 :
+
+                    break;
+                case 3 :
+
+                    break;
+                default:
+            }
+        }while (repeat);
+    }
+}
