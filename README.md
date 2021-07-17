@@ -1,6 +1,6 @@
 # By Muhammad Irfani
 Repo Praktikum Pemrograman
-Source : https://kutt.it/javaDataStructure
+Source : https://kutt.it/DataStructure
 ### Hi there 👋, my name is Muhammad Irfani
 I made this project just for fun, you can copy and develope my project
 
